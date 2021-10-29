@@ -152,24 +152,24 @@ function gameEngine() {
 
 //********************** main logic starts here**********************
 window.requestAnimationFrame(main);
-window.addEventListener("keydown", (e) => {
+function control(key){
   moveSound.play();
   musicSound.play();
   if(direction.x==0&&direction.y==0){
     direction.x=0;
     direction.y=-1;
   }
-  if (directionName == "ArrowUp" && e.key == "ArrowDown") {
+  if (directionName == "ArrowUp" && key == "ArrowDown") {
     opposite=true;
-  } else if (directionName == "ArrowDown" && e.key == "ArrowUp") {
+  } else if (directionName == "ArrowDown" && key == "ArrowUp") {
     opposite=true;
-  } else if (directionName == "ArrowLeft" && e.key == "ArrowRight") {
+  } else if (directionName == "ArrowLeft" && key == "ArrowRight") {
     opposite=true;
-  } else if (directionName == "ArrowRight" && e.key == "ArrowLeft") {
+  } else if (directionName == "ArrowRight" && key == "ArrowLeft") {
     opposite=true;
   } else {
-    directionName = e.key;
-    switch (e.key) {
+    directionName = key;
+    switch (key) {
       case "ArrowUp":
         direction.x = 0;
         direction.y = -1;
@@ -188,4 +188,7 @@ window.addEventListener("keydown", (e) => {
         break;
     }
   }
+}
+window.addEventListener("keydown", (e) => {
+  control(e.key);
 });

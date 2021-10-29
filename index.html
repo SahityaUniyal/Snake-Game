@@ -5,18 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SnakeGame</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="body">
-        <div id="scores">
-          <div id="scoreBox">Score:</div>
-          <div id="highScoreBox">High Score:</div>
-        </div>
-        <div class="board"></div>
+      <div id="scores">
+        <div id="scoreBox">Score:</div>
+        <div id="highScoreBox">High Score:</div>
+      </div>
+      <div class="board"></div>
+      <div class="controller">
+        <img src="./img/right1.png"  onclick="control(this.id)" id="ArrowLeft" alt="" class="left button">
+          <img src="./img/right1.png" onclick="control(this.id)" id="ArrowUp" alt="" class="up button">
+          <img src="./img/right1.png" onclick="control(this.id)" id="ArrowDown" alt="" class="down button">
+          <img src="./img/right1.png" onclick="control(this.id)" id="ArrowRight" alt="" class="right button">
     </div>
 
     <script src="./script.js"></script>
