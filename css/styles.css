@@ -83,8 +83,8 @@
   display: none;
 }
 img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background-color: white;
   border: 5px solid black;
   border-radius: 10px;
@@ -96,7 +96,7 @@ img {
 
 .up {
   position: absolute;
-  bottom: 60px;
+  bottom: 70px;
   transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
