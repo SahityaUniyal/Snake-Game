@@ -6,7 +6,7 @@ const gameOverSound = new Audio("music/gameover.mp3");
 const moveSound = new Audio("music/move.mp3");
 const musicSound = new Audio("music/music.mp3");
 let snakeArray = [{ x: 13, y: 15 }];
-let speed = 8;
+let speed = 9;
 let lastPaintTime = 0;
 let [board] = document.getElementsByClassName("board");
 let food = { x: 7, y: 5 };
@@ -106,23 +106,26 @@ function moveSnake() {
 //Updating the snake on Eating food
 function foodEaten() {
   if (snakeArray[0].x == food.x && snakeArray[0].y == food.y) {
+    score+=1;
     foodSound.play();
-    score += 1;
     let obj = {
       x: snakeArray[0].x + direction.x,
       y: snakeArray[0].y + direction.y,
     };
-    snakeArray.unshift(obj);
+    snakeArray.push(obj);
     foodGenerate();
   }
+
 }
 // sets the high score in local storage
 function setHighScore() {
   highScore = localStorage.getItem("highScore");
+  highScore=JSON.parse(highScore);
   if (score > highScore) {
     highScore = score;
     localStorage.setItem("highScore", JSON.stringify(highScore));
   }
+
 }
 // updates the score on the website
 function displayScores() {
